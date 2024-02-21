@@ -217,6 +217,10 @@ everything set up correctly and that you are able to listen for events.
             VDIPlatform: null, // optional, provide with 'CITRIX' if using Citrix VDI, or use enum VDIPlatformType
             allowEarlyGum: true, //optional, default to true
           },
+          chat: {
+            disableRingtone: false, // optional, defaults to false
+            ringtoneUrl: '[your-ringtone-filepath].mp3', // optional, defaults to CCP’s default ringtone if a falsy value is set
+          },
           storageAccess: {
             canRequest: true, // By default this is set to true. You can set it to false to opt out from checking storage access.  
             mode: "custom", // To use the default banner, set this to "default"
@@ -285,6 +289,8 @@ and made available to your JS client code.
     on their video if they have video permission set in the security profile. If `false` or not provided, CCP will only provide voice calling.
    - `VDIPlatform`: This option is only applicable for virtual desktop interface integrations. If set, it will configure CCP to optimize softphone audio configuration for the VDI. Options can be provided by using enum `VDIPlatformType`. If `allowFramedSoftphone` is `false` and `VDIPlatform` is going to be set, please make sure you are passing this parameter into `connect.core.initSoftphoneManager()`. For example, `connect.core.initSoftphoneManager({ VDIPlatform: "CITRIX" })`
   - `allowEarlyGum`: If `true` or not provided, CCP will capture the agent’s browser microphone media stream before the contact arrives to reduce the call setup latency. If `false`, CCP will only capture agent media stream after the contact arrives.
+  - * `chat`: This object is optional and allows you to specify some settings
+  surrounding the chat feature of Connect.
 - `pageOptions`: This object is optional and allows you to configure which configuration sections are displayed in the settings tab.
   - `enableAudioDeviceSettings`: If `true`, the settings tab will display a section for configuring audio input and output devices for the agent's local
     machine. If `false`, or if `pageOptions` is not provided, the agent will not be able to change audio device settings from the settings tab. will not be

@@ -289,7 +289,7 @@ and made available to your JS client code.
     on their video if they have video permission set in the security profile. If `false` or not provided, CCP will only provide voice calling.
    - `VDIPlatform`: This option is only applicable for virtual desktop interface integrations. If set, it will configure CCP to optimize softphone audio configuration for the VDI. Options can be provided by using enum `VDIPlatformType`. If `allowFramedSoftphone` is `false` and `VDIPlatform` is going to be set, please make sure you are passing this parameter into `connect.core.initSoftphoneManager()`. For example, `connect.core.initSoftphoneManager({ VDIPlatform: "CITRIX" })`
   - `allowEarlyGum`: If `true` or not provided, CCP will capture the agent’s browser microphone media stream before the contact arrives to reduce the call setup latency. If `false`, CCP will only capture agent media stream after the contact arrives.
-  - * `chat`: This object is optional and allows you to specify some settings
+* `chat`: This object is optional and allows you to specify some settings
   surrounding the chat feature of Connect.
 - `pageOptions`: This object is optional and allows you to configure which configuration sections are displayed in the settings tab.
   - `enableAudioDeviceSettings`: If `true`, the settings tab will display a section for configuring audio input and output devices for the agent's local
